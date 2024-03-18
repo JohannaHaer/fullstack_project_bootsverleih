@@ -1,0 +1,16 @@
+.bootsuebersichtSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: left;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.bootsuebersichtH3 {
+    font-size: 3rem;
+}
+
+.bootsuebersichtP {
+    color: #CDB4DB;
+}

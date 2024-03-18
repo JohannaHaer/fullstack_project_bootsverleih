@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './header.css'
+import Logo from '../../img/logo2.png'
 
 const Header = () => {
     return (
         <header>
-            <Link to='/'>Logo</Link>
+            <Link to='/'><img src={Logo} alt="" className='logo'/></Link>
             <nav>
                 <NavLink to='/boote'>Boote</NavLink>
                 <hr/>

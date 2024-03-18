@@ -13,6 +13,10 @@ const reservierungSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'Boot',
         // required: true,
+    },
+    name: {
+        type: String,
+        
     }
 })
 

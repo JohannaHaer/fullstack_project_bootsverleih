@@ -13,7 +13,9 @@ router.get('/', async (req, res) => {
 
 router.post('/', mult.none(), async (req, res) => {
     const bootInputData = req.body
-    const newBoot = new Boot(bootInputData)
+    const bootNr = Math.floor(Math.random() * 99999)
+    const bootGesamt = {...bootInputData, bootNr}
+    const newBoot = new Boot(bootGesamt)
     const saveResult = await newBoot.save()
     res.status(201).json(saveResult)
 })

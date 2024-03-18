@@ -12,6 +12,10 @@ const bootSchema = new Schema({
     baujahr: {
         type: Number,
         required: true,
+    },
+    bootNr: {
+        type: Number,
+        required: true,
     }
 })
 
