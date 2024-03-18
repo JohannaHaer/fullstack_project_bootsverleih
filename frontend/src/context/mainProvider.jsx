@@ -13,7 +13,9 @@ const MainProvider = ({children}) => {
         })
     }, [])
 
-    console.log(boote);
+
+    const postBoote = (newPostBoote) => fetch('http://localhost:3010/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
+
 
     return (
         <mainContext.Provider value={{boote, setBoote}}>
