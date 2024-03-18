@@ -6,7 +6,7 @@ const Header = () => {
         <>
             <Link><img src="" alt="" /></Link>
             <nav>
-                <Link to={}>Bootsübersicht</Link>
+                <Link>Bootsübersicht</Link>
             </nav>
         </>
     )
