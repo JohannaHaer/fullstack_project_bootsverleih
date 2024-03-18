@@ -6,18 +6,16 @@ import { Boot } from '../model/boot.js'
 const router = express.Router()
 const mult = multer()
 
-router.get('/boote', async (req, res) => {
+router.get('/', async (req, res) => {
     const boote = await Boot.find().lean()
-    res.json
+    res.json(boote)
 })
 
-router.post('/boote', mult.single('image'), async (req, res) => {
-    const newBoot = new Boot({
-        content: req.body
-    })
-    const saveResult = await newBoot.save(
-        res.status(201).json(saveResult)
-    )
+router.post('/', mult.none(), async (req, res) => {
+    const bootInputData = req.body
+    const newBoot = new Boot(bootInputData)
+    const saveResult = await newBoot.save()
+    res.status(201).json(saveResult)
 })
 
 export default router
