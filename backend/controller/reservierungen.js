@@ -6,7 +6,7 @@ const router = express.Router()
 const mult = multer()
 
 router.get('/', async (req, res) => {
-    const reservierungen = await Reservierung.find().lean().populate('boote')
+    const reservierungen = await Reservierung.find().lean().populate('boot')
     res.json(reservierungen)
 })
 

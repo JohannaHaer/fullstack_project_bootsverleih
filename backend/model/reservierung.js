@@ -12,7 +12,7 @@ const reservierungSchema = new Schema({
     boot: {
         type: mongoose.Types.ObjectId,
         ref: 'Boot',
-        required: true,
+        // required: true,
     }
 })
 

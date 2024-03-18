@@ -12,7 +12,7 @@ const app = express()
 
 app.use(cors({origin: 'http://localhost:5173'}))
 app.use('/boote', bootRouter)
-// app.use('/reservierungen', reservierungRouter)
+app.use('/reservierungen', reservierungRouter)
 
 app.listen(PORT, () => {
     console.log(`listening on http://localhost:${PORT}`);
