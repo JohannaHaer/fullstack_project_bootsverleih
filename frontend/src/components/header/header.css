@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+hr {
+    height: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    font-weight: 700;
+}
+
+a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+nav > a:hover {
+    text-decoration: underline;
+}
+
+img {
+    width: 3rem;
+    height: max-content;
+}

@@ -13,12 +13,11 @@ const MainProvider = ({children}) => {
         })
     }, [])
 
-
     const postBoote = (newPostBoote) => fetch('http://localhost:3010/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
-
+    
 
     return (
-        <mainContext.Provider value={{boote, setBoote}}>
+        <mainContext.Provider value={{boote, setBoote, postBoote}}>
             {children}
         </mainContext.Provider>
     )

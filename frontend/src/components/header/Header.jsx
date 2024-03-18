@@ -1,17 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import './header.css'
 
 const Header = () => {
     return (
-        <>
-            <Link to='/'><img src="" alt="" /></Link>
+        <header>
+            <Link to='/'>Logo</Link>
             <nav>
-                <Link to='/boote'>Boote</Link>
-                <Link to='/reservierungen'>Reservierungen</Link>
-                <Link to='/boote/hinzufuegen'>Boot hinzufügen</Link>
-                <Link to='/reservierungen/hinzufuegen'>Reservierung hinzufügen</Link>
+                <NavLink to='/boote'>Boote</NavLink>
+                <hr/>
+                <NavLink to='/reservierungen'>Reservierungen</NavLink>
+                <hr/>
+                <NavLink to='/boote/hinzufuegen'>Boot hinzufügen</NavLink>
+                <hr/>
+                <NavLink to='/reservierungen/hinzufuegen'>Reservierung hinzufügen</NavLink>
             </nav>
-        </>
+        </header>
     )
 }
 

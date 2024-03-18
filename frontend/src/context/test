@@ -1,0 +1,9 @@
+ // // ! Fetch zum Auslesen der Datenbank über die vorliegenden Reservierungen
+    // useEffect(() => {
+    //     fetch('http://localhost:3010/reservierungen').then((response) => response.json()).then((json) => {
+    //         setReservierungen(json)
+    //     })
+    // }, [])
+
+    // // ! Fetch zum Auslesen der hinzugefügten Reservierungen
+    // const postReservierungen = (newPostReservierungen) => fetch('http://localhost:3010/reservierungen', {method: 'POST', body: newPostReservierungen}).then((response) => response.json())

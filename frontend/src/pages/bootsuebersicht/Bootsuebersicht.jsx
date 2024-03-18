@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Header from '../../components/header/Header'
 import { mainContext } from '../../context/mainProvider'
+import { Link } from 'react-router-dom'
 
 const Bootsuebersicht = () => {
     const {boote, setBoote} = useContext(mainContext)
@@ -11,9 +12,9 @@ const Bootsuebersicht = () => {
             <section>
                 {boote.map((boot) => {
                     return(
-                        <div key={boot._id}>
+                        <Link to='/boote/details' key={boot._id}>
                             <p>{boot.name}; {boot.baujahr}</p>
-                        </div>
+                        </Link>
                     )
                 })
                 }

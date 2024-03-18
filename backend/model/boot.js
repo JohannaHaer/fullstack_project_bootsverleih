@@ -7,11 +7,11 @@ const bootSchema = new Schema({
     },
     seriennummer: {
         type: String,
-        // required: true,
+        required: true,
     },
     baujahr: {
         type: Number,
-        // required: true,
+        required: true,
     }
 })
 

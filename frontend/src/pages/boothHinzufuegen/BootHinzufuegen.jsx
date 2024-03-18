@@ -3,14 +3,14 @@ import Header from '../../components/header/Header'
 import { mainContext } from '../../context/mainProvider'
 
 const BootHinzufuegen = () => {
-    const {boote, setBoote} = useContext(mainContext)
+    const {postBoote} = useContext(mainContext)
 
     const formRef = useRef()
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         const formData = new FormData(formRef.current)
-        await setBoote(formData)
+        await postBoote(formData)
         formRef.current.reset()
     }
 
