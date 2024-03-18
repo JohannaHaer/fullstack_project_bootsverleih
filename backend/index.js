@@ -9,7 +9,7 @@ await mongoose.connect(process.env.MONGODB_URI)
 const PORT = 3010
 const app = express()
 
-app.use(cors({origin: 'http://localhost:5174'}))
+app.use(cors({origin: 'http://localhost:5173'}))
 app.use('/boote', bootRouter)
 
 app.listen(PORT, () => {

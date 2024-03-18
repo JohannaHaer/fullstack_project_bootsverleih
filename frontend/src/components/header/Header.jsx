@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <>
-            <Link><img src="" alt="" /></Link>
+            <Link to='/'><img src="" alt="" /></Link>
             <nav>
-                <Link>Bootsübersicht</Link>
+                <Link to='/boote'>Boote</Link>
+                <Link to='/reservierungen'>Reservierungen</Link>
+                <Link to='/boote/hinzufuegen'>Boot hinzufügen</Link>
+                <Link to='/reservierungen/hinzufuegen'>Reservierung hinzufügen</Link>
             </nav>
         </>
     )

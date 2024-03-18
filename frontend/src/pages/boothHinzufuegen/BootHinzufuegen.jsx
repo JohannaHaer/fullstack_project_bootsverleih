@@ -1,10 +1,13 @@
 import React from 'react'
+import Header from '../../components/header/Header'
 
-const Boothinzufuegen = () => {
+const BootHinzufuegen = () => {
     return (
         <>
+            <Header/>
+            <section></section>
         </>
     )
 }
 
-export default Boothinzufuegen
+export default BootHinzufuegen
