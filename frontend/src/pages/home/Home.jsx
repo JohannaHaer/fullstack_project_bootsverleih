@@ -17,7 +17,7 @@ const Home = () => {
                     <h3 className='homeH3'>Aktuelle Anzahl Reservierungen</h3>
                 </div>
                 <div className='homeDiv homeDiv2'>
-                    <p className='homeP'>Hi</p>
+                    <p className='homeP'>{counter[2]}</p>
                     <h3 className='homeH3'>Heute nicht reservierte Tretboote</h3>
                 </div>
                 <div className='homeDiv homeDiv3'>

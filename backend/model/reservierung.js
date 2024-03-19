@@ -14,6 +14,11 @@ const reservierungSchema = new Schema({
         ref: 'Boot',
         required: true,
     },
+    reservierung: {
+        type: Boolean,
+        default: true,
+        required: true,
+    }
 })
 
 export const Reservierung = mongoose.model('Reservierung', reservierungSchema)
