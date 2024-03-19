@@ -13,8 +13,10 @@ const Reservierungsuebersicht = () => {
             <section>
             {reservierungen.map((reservierung) => {
                 return(
-                    <Link to='/reservierungen/details' key={reservierung._id}>
-                        <p>{reservierung.startDatum} - {reservierung.endDatum}</p>
+                    <Link to={`/reservierungen/${reservierung.boot.name}`} key={reservierung._id}>
+                        <h3>{reservierung.boot.name}</h3>
+                        <p>BootsNr: {reservierung.boot.bootNr}</p>
+                        <p>Reservierungs-Zeitraum: {reservierung.startDatum} - {reservierung.endDatum}</p>
                     </Link>
                 )
             })}

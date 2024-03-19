@@ -1,0 +1,61 @@
+
+.bootDetailsSection {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.bootDetailsInfoDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bootDetailsDiv {
+    position: relative;
+}
+
+.bootsDetailsH3 {
+    font-size: 6rem;
+    color: #BDE0FE;
+}
+
+.bootsDetailsP {
+    font-size: 2rem;
+    color: #CDB4DB;
+}
+
+.bootDetailsButton {
+    background: #BDE0FE;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #374654;
+    color: #374654;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.bootDetailsButton:hover {
+    background-color: #374654;
+    color: #BDE0FE;
+    border: 1px solid #BDE0FE;
+}
+
+.tretbootImg {
+    width: 40rem;
+    box-shadow: 1px 1px 10px black;
+}
+
+.bootDetailsName {
+    position: absolute;
+    bottom: 5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 15px gray;
+    color: #374654;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}

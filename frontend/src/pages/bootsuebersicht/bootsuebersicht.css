@@ -1,16 +1,29 @@
 .bootsuebersichtSection {
     display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: left;
-    margin-left: 20%;
+    justify-content: space-around;
+    align-items: top;
     margin-top: 5%;
+}
+
+.bootsuebersichtDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .bootsuebersichtH3 {
     font-size: 3rem;
+    color: #B2F7EF;
 }
 
 .bootsuebersichtP {
     color: #CDB4DB;
+}
+
+.bootsuebersichtH3:hover {
+    text-decoration: underline;
+}
+.bootsuebersichtImg {
+    width: 50rem;
+    box-shadow: 1px 1px 10px black;
 }

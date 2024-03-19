@@ -19,8 +19,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/boote' element={<Bootsuebersicht/>}/>
         <Route path='/reservierungen' element={<Reservierungsuebersicht/>}/>
-        <Route path='/boote/details' element={<BootDetails/>}/>
-        <Route path='/reservierungen/details' element={<ReservierungsDetails/>}/>
+        <Route path='/boote/:details' element={<BootDetails/>}/>
+        <Route path='/reservierungen/:details' element={<ReservierungsDetails/>}/>
         <Route path='/boote/hinzufuegen' element={<BootHinzufuegen/>}/>
         <Route path='/reservierungen/hinzufuegen' element={<ReservierungHinzufügen/>}/>
       </Routes>

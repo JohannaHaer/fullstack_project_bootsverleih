@@ -18,6 +18,10 @@ const reservierungSchema = new Schema({
         type: Boolean,
         default: true,
         required: true,
+    },
+    reservierungsNr: {
+        type: String,
+        required: true,
     }
 })
 

@@ -11,8 +11,13 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', mult.none(), async (req, res) => {
+    // Übergabe der Daten aus dem Request
     const reservierungInputData = req.body
-    const newReservierung = new Reservierung(reservierungInputData)
+    // Erstellung einer random Reswervierungsnummer
+    const reservierungsNr = Math.floor(Math.random() * 99999)
+    // Zusammenführung der Daten und sichern in der Datenbank
+    const reservierungGesamt = {...reservierungInputData, reservierungsNr}
+    const newReservierung = new Reservierung(reservierungGesamt)
     const saveResult = await newReservierung.save()
     res.status(201).json(saveResult)
 })
