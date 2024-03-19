@@ -12,12 +12,8 @@ const reservierungSchema = new Schema({
     boot: {
         type: mongoose.Types.ObjectId,
         ref: 'Boot',
-        // required: true,
+        required: true,
     },
-    name: {
-        type: String,
-        
-    }
 })
 
 export const Reservierung = mongoose.model('Reservierung', reservierungSchema)

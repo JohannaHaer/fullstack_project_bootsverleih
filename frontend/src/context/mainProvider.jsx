@@ -6,6 +6,7 @@ export const mainContext = createContext()
 const MainProvider = ({children}) => {
     const [boote, setBoote] = useState([])
     const [reservierungen, setReservierungen] = useState([])
+    const [counter, setCounter] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3010/boote').then((response) => response.json()).then((json) => {
@@ -25,8 +26,15 @@ const MainProvider = ({children}) => {
     // ! Fetch zum Auslesen der hinzugefügten Reservierungen
     const postReservierungen = (newPostReservierungen) => fetch('http://localhost:3010/reservierungen', {method: 'POST', body: newPostReservierungen}).then((response) => response.json())
 
+    // ! Fetch zum Auslesen der Anzahl an Reservierungen (total) und Boote (total)
+    useEffect(() => {
+        fetch('http://localhost:3010/').then((response) => response.json()).then((json) => {
+            setCounter(json)
+        })
+    }, [])
+    
     return (
-        <mainContext.Provider value={{boote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen}}>
+        <mainContext.Provider value={{boote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter}}>
             {children}
         </mainContext.Provider>
     )

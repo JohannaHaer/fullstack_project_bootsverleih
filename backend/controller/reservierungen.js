@@ -12,6 +12,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', mult.none(), async (req, res) => {
     const reservierungInputData = req.body
+    const test = req.body.boot
+    console.log(test);
     const newReservierung = new Reservierung(reservierungInputData)
     const saveResult = await newReservierung.save()
     res.status(201).json(saveResult)

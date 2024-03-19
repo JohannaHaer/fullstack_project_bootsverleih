@@ -20,10 +20,10 @@ const ReservierungHinzufügen = () => {
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <input type="date" name='startDatum'/>
                     <input type="date" name='endDatum'/>
-                    <select name="" id="">
+                    <select name="boot">
                         {boote.map((boot) => {
                             return(
-                                <option name='boot' value={boot._id} key={boot._id}>{boot.name}</option>
+                                <option value={boot._id} key={boot._id}>{boot.name}</option>
                             )
                         })}
                     </select>
