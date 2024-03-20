@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import Header from '../../components/header/Header'
 import { Link, useParams } from 'react-router-dom'
 import { mainContext } from '../../context/mainProvider'
@@ -7,8 +7,9 @@ import './reservierungsDetails.css'
 
 const ReservierungsDetails = () => {
     const params = useParams()
-
-    const {reservierungen, setReservierungen, deleteReservierung, reloadReservierung} = useContext(mainContext)
+    const formRef = useRef()
+    console.log(formRef);
+    const {boote, reservierungen, deleteReservierung, reloadReservierung, aenderungReservierung} = useContext(mainContext)
 
     const reservierung = reservierungen.find((item) => item._id == params.id)
 
@@ -16,6 +17,16 @@ const ReservierungsDetails = () => {
         await deleteReservierung(params.id)
         await reloadReservierung()
         navigate('/reservierungen')
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        console.log(formData);
+        console.log([...formData.entries()])
+        await aenderungReservierung(params.id, formData)
+        await reloadReservierung()
+        formRef.current.reset()
     }
 
     return (
@@ -36,6 +47,20 @@ const ReservierungsDetails = () => {
                 </div>
             </section>
             <button onClick={handleDelete}>Reservierung entfernen</button>
+            <section>
+                <form ref={formRef} onSubmit={handleSubmit} className='reservierungHinzufuegenForm'>
+                    <input type="date" name='startDatum' className='reservierungHinzufuegenInput'/>
+                    <input type="date" name='endDatum' className='reservierungHinzufuegenInput'/>
+                    <select name="boot" className='reservierungHinzufuegenSelection'>
+                        {boote.map((boot) => {
+                            return(
+                                <option value={boot._id} key={boot._id}>{boot.name}</option>
+                            )
+                        })}
+                    </select>
+                    <button className='formButton'>Reservierung ändern</button>
+                </form>
+            </section>
         </>
     )
 }

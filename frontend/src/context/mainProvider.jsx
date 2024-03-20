@@ -37,7 +37,7 @@ const MainProvider = ({children}) => {
     }, [])
 
     // ! Fetch zum Auslesen der hinzugefügten Reservierungen
-    const postReservierungen = (newPostReservierungen) => fetch('http://localhost:3010/reservierungen', {method: 'POST', body: newPostReservierungen}).then((response) => response.json())
+    const postReservierungen = (neueReservierungen) => fetch('http://localhost:3010/reservierungen', {method: 'POST', body: neueReservierungen}).then((response) => response.json())
 
     // ! Fetch zum Auslesen der Anzahl an Reservierungen (total) und Boote (total)
     useEffect(() => {
@@ -47,12 +47,17 @@ const MainProvider = ({children}) => {
     }, [])
 
     // ! Löschen einer angelegten Reservierung
-    const deleteReservierung = (deleteReservierung) => fetch(`http://localhost:3010/reservierungen/${deleteReservierung}`, {
+    const deleteReservierung = (id) => fetch(`http://localhost:3010/reservierungen/${id}`, {
         method: 'DELETE'
+    })
+
+    const aenderungReservierung = (id, aenderungReservierung) => fetch(`http://localhost:3010/reservierungen/${id}`, {
+        method: 'PATCH',
+        body: aenderungReservierung
     })
     
     return (
-        <mainContext.Provider value={{boote, reloadBoote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter, deleteBoote, reloadReservierung, deleteReservierung}}>
+        <mainContext.Provider value={{boote, reloadBoote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter, deleteBoote, reloadReservierung, deleteReservierung, aenderungReservierung}}>
             {children}
         </mainContext.Provider>
     )
