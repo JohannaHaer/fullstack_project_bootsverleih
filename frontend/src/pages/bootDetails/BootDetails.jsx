@@ -8,7 +8,7 @@ import './bootDetails.css'
 const BootDetails = () => {
     const params = useParams()
     const navigate = useNavigate()
-    const {boote, setBoote, deleteBoote, reloadBoote} = useContext(mainContext)
+    const {boote, deleteBoote, reloadBoote} = useContext(mainContext)
 
     const boot = boote.find((item) => item.name == params.details)
     
@@ -35,7 +35,7 @@ const BootDetails = () => {
                                 <h3 className='bootDetailsName'>{boot.name}</h3>
                             </div>
             </section>
-            <button onClick={handleDelete}>Boot entfernen</button>
+            <div className='bootDetailsPositionButton'><button onClick={handleDelete} className='deleteButton'>Boot entfernen</button></div>
         </>
     )
 }

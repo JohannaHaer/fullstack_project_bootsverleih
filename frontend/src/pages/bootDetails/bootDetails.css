@@ -67,3 +67,8 @@
     padding: 0.5rem 1rem;
     border-radius: 15px;
 }
+
+.bootDetailsPositionButton {
+    display: flex;
+    justify-content: center;
+}

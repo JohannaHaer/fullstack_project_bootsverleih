@@ -46,20 +46,22 @@ const ReservierungsDetails = () => {
                     <h3 className='reservierungsDetailsName'>{reservierung.boot.name}</h3>
                 </div>
             </section>
-            <button onClick={handleDelete}>Reservierung entfernen</button>
-            <section>
-                <form ref={formRef} onSubmit={handleSubmit} className='reservierungHinzufuegenForm'>
-                    <input type="date" name='startDatum' className='reservierungHinzufuegenInput'/>
-                    <input type="date" name='endDatum' className='reservierungHinzufuegenInput'/>
-                    <select name="boot" className='reservierungHinzufuegenSelection'>
-                        {boote.map((boot) => {
-                            return(
-                                <option value={boot._id} key={boot._id}>{boot.name}</option>
-                            )
-                        })}
-                    </select>
-                    <button className='formButton'>Reservierung ändern</button>
-                </form>
+            <section className='reservierungsDetailsSection2'>
+                <button onClick={handleDelete} className='deleteButton'>Reservierung entfernen</button>
+                <div className='reservierungAendernDiv'>
+                    <form ref={formRef} onSubmit={handleSubmit} className='reservierungAendernForm'>
+                        <input type="date" name='startDatum' className='reservierungAendernInput'/>
+                        <input type="date" name='endDatum' className='reservierungAendernInput'/>
+                        <select name="boot" className='reservierungAendernSelection'>
+                            {boote.map((boot) => {
+                                return(
+                                    <option value={boot._id} key={boot._id}>{boot.name}</option>
+                                )
+                            })}
+                        </select>
+                        <button className='formButton'>Reservierung ändern</button>
+                    </form>
+                </div>
             </section>
         </>
     )
