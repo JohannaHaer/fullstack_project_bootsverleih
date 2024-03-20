@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from 'react'
 import Header from '../../components/header/Header'
 import { mainContext } from '../../context/mainProvider'
+import './reservierungHinzufuegen.css'
 
 const ReservierungHinzufügen = () => {
     const {boote, setBoote, reservierungen, setReservierungen, postReservierungen} = useContext(mainContext)
@@ -16,20 +17,21 @@ const ReservierungHinzufügen = () => {
     return (
         <>
             <Header/>
-            <section>
-                <form ref={formRef} onSubmit={handleSubmit}>
-                    <input type="date" name='startDatum'/>
-                    <input type="date" name='endDatum'/>
-                    <select name="boot">
+            <section className='reservierungHinzufuegenSection'>
+                <form ref={formRef} onSubmit={handleSubmit} className='reservierungHinzufuegenForm'>
+                    <input type="date" name='startDatum' className='reservierungHinzufuegenInput'/>
+                    <input type="date" name='endDatum' className='reservierungHinzufuegenInput'/>
+                    <select name="boot" className='reservierungHinzufuegenSelection'>
                         {boote.map((boot) => {
                             return(
                                 <option value={boot._id} key={boot._id}>{boot.name}</option>
                             )
                         })}
                     </select>
-                    <button>Erstellen</button>
+                    <button className='formButton'>Erstellen</button>
                 </form>
             </section>
+
         </>
     )
 }

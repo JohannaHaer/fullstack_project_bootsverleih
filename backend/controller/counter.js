@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
         }
     }
 
-    // Entfernung der Dublikate der heute reservierten Boote
+    // Entfernung der Dulikate der heute reservierten Boote
     const uniqueIDArray = Array.from(new Set(reserviertIDs.map(JSON.stringify))).map(JSON.parse)
     
     // Berechnung der Anzahl freier Boote für den heutige Tag

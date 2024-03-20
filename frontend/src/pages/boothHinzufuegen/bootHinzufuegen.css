@@ -1,0 +1,13 @@
+.bootHinzufuegenSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bootHinzufuegenForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5%;
+}
+

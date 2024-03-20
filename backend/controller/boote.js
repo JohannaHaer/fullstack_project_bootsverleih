@@ -19,4 +19,12 @@ router.post('/', mult.none(), async (req, res) => {
     res.status(201).json(saveResult)
 })
 
+router.delete('/:details', async (req, res) => {
+    const name = req.params.details
+    const deleteBoot = await Boot.deleteOne({name: name})
+    res.status(204).send(deleteBoot)
+})
+
+
+
 export default router
