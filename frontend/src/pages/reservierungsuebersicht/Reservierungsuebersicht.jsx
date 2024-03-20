@@ -14,7 +14,7 @@ const Reservierungsuebersicht = () => {
             <div className='reservierungsuebersichtDiv'>
                 {reservierungen.map((reservierung) => {
                     return(
-                        <Link to={`/reservierungen/${reservierung.boot.name}`} key={reservierung._id} className='reservierungsuebersichtA'>
+                        <Link to={`/reservierungen/${reservierung._id}`} key={reservierung._id} className='reservierungsuebersichtA'>
                             <div>
                                 <p className='reservierungsuebersichtP'>BootsNr: {reservierung.boot.bootNr}</p>
                                 <h3 className='reservierungsuebersichtH3'>{reservierung.boot.name}</h3>

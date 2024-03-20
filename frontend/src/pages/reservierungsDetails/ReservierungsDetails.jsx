@@ -8,11 +8,15 @@ import './reservierungsDetails.css'
 const ReservierungsDetails = () => {
     const params = useParams()
 
-    const {reservierungen, setReservierungen} = useContext(mainContext)
+    const {reservierungen, setReservierungen, deleteReservierung, reloadReservierung} = useContext(mainContext)
 
-    const reservierung = reservierungen.find((item) => item.boot.name == params.details)
+    const reservierung = reservierungen.find((item) => item._id == params.id)
 
-    console.log(reservierung);
+    const handleDelete = async () => {
+        await deleteReservierung(params.id)
+        await reloadReservierung()
+        navigate('/reservierungen')
+    }
 
     return (
         <>
@@ -31,6 +35,7 @@ const ReservierungsDetails = () => {
                     <h3 className='reservierungsDetailsName'>{reservierung.boot.name}</h3>
                 </div>
             </section>
+            <button onClick={handleDelete}>Reservierung entfernen</button>
         </>
     )
 }

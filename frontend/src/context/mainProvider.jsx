@@ -21,12 +21,19 @@ const MainProvider = ({children}) => {
 
     const postBoote = (newPostBoote) => fetch('http://localhost:3010/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
     
+    // ! Löschen eines angelegten Bootes
+    const deleteBoote = (deleteBoot) => fetch(`http://localhost:3010/boote/${deleteBoot}`, {
+        method: 'DELETE'
+    })
 
      // ! Fetch zum Auslesen der Datenbank über die vorliegenden Reservierungen
-    useEffect(() => {
-        fetch('http://localhost:3010/reservierungen').then((response) => response.json()).then((json) => {
+    const reloadReservierung = ()=> {
+        return fetch('http://localhost:3010/reservierungen').then((response) => response.json()).then((json) => {
             setReservierungen(json)
-        })
+        })}
+    
+    useEffect(() => {
+        reloadReservierung()
     }, [])
 
     // ! Fetch zum Auslesen der hinzugefügten Reservierungen
@@ -39,12 +46,13 @@ const MainProvider = ({children}) => {
         })
     }, [])
 
-    const deleteBoote = (deleteBoot) => fetch(`http://localhost:3010/boote/${deleteBoot}`, {
+    // ! Löschen einer angelegten Reservierung
+    const deleteReservierung = (deleteReservierung) => fetch(`http://localhost:3010/reservierungen/${deleteReservierung}`, {
         method: 'DELETE'
     })
     
     return (
-        <mainContext.Provider value={{boote, reloadBoote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter, deleteBoote}}>
+        <mainContext.Provider value={{boote, reloadBoote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter, deleteBoote, reloadReservierung, deleteReservierung}}>
             {children}
         </mainContext.Provider>
     )
