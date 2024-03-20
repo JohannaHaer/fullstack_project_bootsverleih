@@ -29,4 +29,11 @@ router.delete('/:id', async (req, res) => {
     res.status(204).send(deleteReservierung)
 })
 
+router.patch('/:id', mult.none(), async (req, res) => {
+    const id = req.params.id
+    const reservierung = req.body
+    const aenderung = await Reservierung.updateOne({_id: id}, reservierung)
+    res.status(204).json(aenderung)
+})
+
 export default router

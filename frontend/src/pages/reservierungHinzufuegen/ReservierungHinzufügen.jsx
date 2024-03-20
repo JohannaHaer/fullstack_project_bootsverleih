@@ -4,7 +4,7 @@ import { mainContext } from '../../context/mainProvider'
 import './reservierungHinzufuegen.css'
 
 const ReservierungHinzufügen = () => {
-    const {boote, setBoote, reservierungen, setReservierungen, postReservierungen} = useContext(mainContext)
+    const {boote, setBoote, reservierungen, setReservierungen, postReservierungen, reloadReservierung} = useContext(mainContext)
 
     const formRef = useRef()
 
@@ -12,6 +12,7 @@ const ReservierungHinzufügen = () => {
         event.preventDefault()
         const formData = new FormData(formRef.current)
         await postReservierungen(formData)
+        await reloadReservierung()
         formRef.current.reset()
     }
     return (
