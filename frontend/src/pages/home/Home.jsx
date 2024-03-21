@@ -4,7 +4,7 @@ import './home.css'
 import { mainContext } from '../../context/mainProvider'
 
 const Home = () => {
-    const {counter, setCounter} = useContext(mainContext)
+    const {counter} = useContext(mainContext)
 
     return (
         <>

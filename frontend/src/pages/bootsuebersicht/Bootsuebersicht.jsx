@@ -6,7 +6,7 @@ import './bootsuebersicht.css'
 import Tretboot from '../../img/tretboote_bild.jpg'
 
 const Bootsuebersicht = () => {
-    const {boote, setBoote} = useContext(mainContext)
+    const {boote} = useContext(mainContext)
 
     return (
         <>

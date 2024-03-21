@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import './reservierungsuebersicht.css'
 
 const Reservierungsuebersicht = () => {
-    const {reservierungen, setReservierungen} = useContext(mainContext)
+    const {reservierungen} = useContext(mainContext)
 
     return (
         <>

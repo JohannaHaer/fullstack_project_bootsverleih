@@ -8,6 +8,7 @@ const MainProvider = ({children}) => {
     const [reservierungen, setReservierungen] = useState([])
     const [counter, setCounter] = useState([])
 
+    // ! Fetch zum Auslesen der Datenbank über die vorliegenden Boote
     const reloadBoote = ()=> {
         return fetch('http://localhost:3010/boote').then((response) => response.json()).then((json) => {
             setBoote(json)
@@ -18,7 +19,6 @@ const MainProvider = ({children}) => {
     }, [])
 
     // ! Fetch zum Hinzufügen von Booten
-
     const postBoote = (newPostBoote) => fetch('http://localhost:3010/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
     
     // ! Löschen eines angelegten Bootes
@@ -51,13 +51,14 @@ const MainProvider = ({children}) => {
         method: 'DELETE'
     })
 
+    // ! Angelegte Reservierungen ändern
     const aenderungReservierung = (id, aenderungReservierung) => fetch(`http://localhost:3010/reservierungen/${id}`, {
         method: 'PATCH',
         body: aenderungReservierung
     })
     
     return (
-        <mainContext.Provider value={{boote, reloadBoote, setBoote, postBoote, reservierungen, setReservierungen, postReservierungen, counter, setCounter, deleteBoote, reloadReservierung, deleteReservierung, aenderungReservierung}}>
+        <mainContext.Provider value={{boote, reloadBoote, postBoote, reservierungen, postReservierungen, counter, deleteBoote, reloadReservierung, deleteReservierung, aenderungReservierung}}>
             {children}
         </mainContext.Provider>
     )

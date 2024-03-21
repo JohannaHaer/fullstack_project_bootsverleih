@@ -4,7 +4,7 @@ import { mainContext } from '../../context/mainProvider'
 import './reservierungHinzufuegen.css'
 
 const ReservierungHinzufügen = () => {
-    const {boote, setBoote, reservierungen, setReservierungen, postReservierungen, reloadReservierung} = useContext(mainContext)
+    const {boote, postReservierungen, reloadReservierung} = useContext(mainContext)
 
     const formRef = useRef()
 
