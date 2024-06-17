@@ -1,13 +1,13 @@
 # Fullstack Projekt Bootsverleih
-Willkommen zum Nautilus Bootsverleih Projekt! Diese Webanwendung ermöglicht es Benutzern, Bootsausflüge einfach zu verwalten. Die Plattform bietet eine Vielzahl von Funktionen, die es einfach machen, Reservierungen und Bootsdetails zu verwalten. Im Folgenden finden Sie eine kurze Einführung zu den Hauptfunktionen und wie Sie das Projekt nutzen können.
+Willkommen zum Nautilus Bootsverleih Projekt! Diese Webanwendung ermöglicht es Benutzer*innen, Bootsausflüge einfach zu verwalten. Die Plattform bietet eine Vielzahl von Funktionen, die es einfach machen, Reservierungen und Bootsdetails einzusehen.
 
 # Funktionen
-- **Aktuelle Reservierungen anzeigen:** Sehen Sie die Anzahl der aktuell getätigten Reservierungen.
-- **Gesamtanzahl der Boote:** Überprüfen Sie, wie viele Boote insgesamt zur Verfügung stehen.
-- **Heute nicht reservierte Boote:** Erhalten Sie eine Liste der Boote, die heute nicht reserviert sind.
-- **Boote und Reservierungen hinzufügen:** Fügen Sie neue Boote zur Flotte hinzu oder erstellen Sie neue Reservierungen.
-- **Details zu einem Boot einsehen:** Rufen Sie detaillierte Informationen zu jedem einzelnen Boot ab.
-- **Boote und Reservierungen löschen:** Entfernen Sie Boote oder stornieren Sie Reservierungen nach Bedarf.
+- **Aktuelle Reservierungen anzeigen:** Anzahl der aktuell getätigten Reservierungen.
+- **Gesamtanzahl der Boote:** Anzahl der Boote, die insgesamt zur Verfügung stehen.
+- **Heute nicht reservierte Boote:** Anzahl Boote, die heute nicht reserviert sind.
+- **Boote und Reservierungen hinzufügen:** Hinzufügen neuer Boote zur Flotte oder Erstellung neuer Reservierungen.
+- **Details zu einem Boot einsehen:** Detaillierte Informationen zu jedem einzelnen Boot.
+- **Boote und Reservierungen löschen:** Boote aus der Flotte nehmen oder Reservierungen nach Bedarf stornieren.
 
 
 # Author
