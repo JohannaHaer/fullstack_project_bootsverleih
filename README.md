@@ -8,8 +8,8 @@
 # Mockups
 
 Startseite
-![Mockup Website Landingpage](../assets/img/Startseite-Bootsverleih.png)
+![Mockup Website Landingpage](./frontend/src/img/Startseite-Bootsverleih.png)
 
 
 Bootdetails
-![Mockup Website Landingpage](../assets/img/Bootsverleih-Mockup.png)
+![Mockup Website Landingpage](./frontend/src/img/Bootsverleih-Mockup.png)
