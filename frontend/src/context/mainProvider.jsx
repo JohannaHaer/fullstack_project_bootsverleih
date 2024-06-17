@@ -10,7 +10,7 @@ const MainProvider = ({children}) => {
 
     // ! Fetch zum Auslesen der Datenbank über die vorliegenden Boote
     const reloadBoote = ()=> {
-        return fetch('http://localhost:3010/boote').then((response) => response.json()).then((json) => {
+        return fetch('http://localhost:3000/boote').then((response) => response.json()).then((json) => {
             setBoote(json)
         })}
     
@@ -19,16 +19,16 @@ const MainProvider = ({children}) => {
     }, [])
 
     // ! Fetch zum Hinzufügen von Booten
-    const postBoote = (newPostBoote) => fetch('http://localhost:3010/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
+    const postBoote = (newPostBoote) => fetch('http://localhost:3000/boote', {method: 'POST', body: newPostBoote}).then((response) => response.json())
     
     // ! Löschen eines angelegten Bootes
-    const deleteBoote = (deleteBoot) => fetch(`http://localhost:3010/boote/${deleteBoot}`, {
+    const deleteBoote = (deleteBoot) => fetch(`http://localhost:3000/boote/${deleteBoot}`, {
         method: 'DELETE'
     })
 
      // ! Fetch zum Auslesen der Datenbank über die vorliegenden Reservierungen
     const reloadReservierung = ()=> {
-        return fetch('http://localhost:3010/reservierungen').then((response) => response.json()).then((json) => {
+        return fetch('http://localhost:3000/reservierungen').then((response) => response.json()).then((json) => {
             setReservierungen(json)
         })}
     
@@ -37,22 +37,22 @@ const MainProvider = ({children}) => {
     }, [])
 
     // ! Fetch zum Auslesen der hinzugefügten Reservierungen
-    const postReservierungen = (neueReservierungen) => fetch('http://localhost:3010/reservierungen', {method: 'POST', body: neueReservierungen}).then((response) => response.json())
+    const postReservierungen = (neueReservierungen) => fetch('http://localhost:3000/reservierungen', {method: 'POST', body: neueReservierungen}).then((response) => response.json())
 
     // ! Fetch zum Auslesen der Anzahl an Reservierungen (total) und Boote (total)
     useEffect(() => {
-        fetch('http://localhost:3010/').then((response) => response.json()).then((json) => {
+        fetch('http://localhost:3000/').then((response) => response.json()).then((json) => {
             setCounter(json)
         })
     }, [])
 
     // ! Löschen einer angelegten Reservierung
-    const deleteReservierung = (id) => fetch(`http://localhost:3010/reservierungen/${id}`, {
+    const deleteReservierung = (id) => fetch(`http://localhost:3000/reservierungen/${id}`, {
         method: 'DELETE'
     })
 
     // ! Angelegte Reservierungen ändern
-    const aenderungReservierung = (id, aenderungReservierung) => fetch(`http://localhost:3010/reservierungen/${id}`, {
+    const aenderungReservierung = (id, aenderungReservierung) => fetch(`http://localhost:3000/reservierungen/${id}`, {
         method: 'PATCH',
         body: aenderungReservierung
     })

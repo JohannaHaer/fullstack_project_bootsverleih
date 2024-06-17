@@ -8,7 +8,7 @@ import anzahlBooteRouter from './controller/counter.js'
 
 await mongoose.connect(process.env.MONGODB_URI)
 
-const PORT = 3010
+const PORT = 3000
 const app = express()
 
 app.use(cors({origin: 'http://localhost:5173'}))
